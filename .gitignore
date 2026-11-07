@@ -1,0 +1,10 @@
+# Local scratch copy of the page
+index_copy.html
+note/
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+.vscode/
+
+
+
