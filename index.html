@@ -84,6 +84,9 @@
     .paper-figure { margin: 0 0 1.5rem; }
     .paper-figure img { display: block; width: 100%; height: auto; border-radius: 8px; }
     #method .content { margin-top: 1rem; }
+    .noisy-legend { margin: 0.5rem 0 1rem; color: #555; }
+    .noisy-videos { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .noisy-videos video { display: block; width: 100%; height: auto; border-radius: 8px; background: #fff; }
   </style>
   
   <!-- Non-critical CSS - Load asynchronously -->
@@ -379,6 +382,51 @@
   </div>
 </section>
 <!-- End method -->
+
+
+<!-- Noisy scans -->
+<section class="section" id="noisy">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-3 has-text-centered">Segmenting Clothing from Noisy Scans</h2>
+        <div class="content has-text-justified">
+          <p>
+            To test robustness, we add background to CTD scans: a floor patch, boxes, a pole, random outliers in the
+            scene, stray points close to the body surface, and 2&nbsp;mm jitter on the body. After statistical outlier
+            removal, PartCloth3D labels each point as one of 15 body parts or background, and the background is
+            removed before clothing segmentation. Across the six scans, 96.5&ndash;97.5% of the background points are
+            labelled as background.
+          </p>
+        </div>
+        <p class="has-text-centered is-size-6 noisy-legend">
+          Noisy input scan &nbsp;|&nbsp; Body part segmentation &nbsp;|&nbsp; 3D clothing segmentation (background in light grey)
+        </p>
+        <div class="noisy-videos">
+          <video poster="result/noisy/exp1-f_c_10412256613.jpg" autoplay muted loop playsinline preload="metadata">
+            <source src="result/noisy/exp1-f_c_10412256613.mp4" type="video/mp4">
+          </video>
+          <video poster="result/noisy/exp1-f_p_32586203270.jpg" autoplay muted loop playsinline preload="metadata">
+            <source src="result/noisy/exp1-f_p_32586203270.mp4" type="video/mp4">
+          </video>
+          <video poster="result/noisy/exp1-f_p_33308183516.jpg" autoplay muted loop playsinline preload="metadata">
+            <source src="result/noisy/exp1-f_p_33308183516.mp4" type="video/mp4">
+          </video>
+          <video poster="result/noisy/exp7-m_t_928700-063.jpg" autoplay muted loop playsinline preload="metadata">
+            <source src="result/noisy/exp7-m_t_928700-063.mp4" type="video/mp4">
+          </video>
+          <video poster="result/noisy/exp7-m_t_31470334043.jpg" autoplay muted loop playsinline preload="metadata">
+            <source src="result/noisy/exp7-m_t_31470334043.mp4" type="video/mp4">
+          </video>
+          <video poster="result/noisy/exp8-f_d_33521651029.jpg" autoplay muted loop playsinline preload="metadata">
+            <source src="result/noisy/exp8-f_d_33521651029.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End noisy scans -->
 
 
 <!--BibTex citation -->
