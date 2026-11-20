@@ -374,10 +374,10 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column">
-        <h2 class="title is-3 has-text-centered">3D Clothing Segmentation Results</h2>
+        <h2 class="title is-3 has-text-centered">Comparison with Prior Methods on CTD</h2>
         <div class="content has-text-justified">
           <p>
-            We present the clothing segmentation result of 4D-DRESS, CloSe-Net and PartCloth3D on the CTD dataset. Left is the clothing segmentation and Right is the decomposed clothing. 
+            We compare PartCloth3D with 4D-DRESS and CloSe-Net on scans from the CTD dataset. In each video, the left side shows the predicted clothing labels and the right side shows the garments separated from the body.
           </p>
         </div>
         <div class="result video">
@@ -412,10 +412,10 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column">
-        <h2 class="title is-3 has-text-centered">Segmentation Results on Random Poses and Self-Contact Poses </h2>
+        <h2 class="title is-3 has-text-centered">Random and Self-Contact Poses</h2>
         <div class="content has-text-justified">
           <p>          
-            We further evaluate the performance of PartCloth3D on random poses and self-contact poses. The results show that PartCloth3D can handle various poses and self-contact scenarios effectively, maintaining high segmentation accuracy across different clothing styles and body configurations.
+            We also test PartCloth3D on scans in random poses and in self-contact poses, where limbs touch the torso or each other. These cases are hard because garments on different body parts come into contact, and PartCloth3D still separates them across clothing styles and body shapes.
           </p>
         </div>
         <div class="result video">
@@ -449,7 +449,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column">
-        <h2 class="title is-3 has-text-centered">Segmenting Clothing from Noisy Scans</h2>
+        <h2 class="title is-3 has-text-centered">Robustness to Noisy Scans</h2>
         <div class="content has-text-justified">
           <p>
             To test robustness, we add background to CTD scans: a floor patch, boxes, a pole, random outliers in the
