@@ -327,21 +327,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Accurate 3D clothing segmentation is essential for fashion, entertainment, and animation applications.
-            Existing methods can generally be categorized into multi-view projection-based and point-based methods.
-            Multi-view methods are sensitive to occluded pose and take longer inference times due to repeated image
-            rendering and back-projection to 3D. Point-based methods are often either limited to coarse garment
-            categories or rely on parametric body model registration. To address these limitations, a point cloud
-            segmentation network named PartCloth3D is proposed to segment 3D clothing using body part priors. It
-            predicts 15 semantic body parts and the background from the scan geometry, with graph cut optimization
-            subsequently recovering missing regions. The refined body parts are encoded as body prior and fuse with
-            point and clothing features to estimate per-point clothing labels. Experiments on the CTD and THuman2.0
-            datasets demonstrate improved body part segmentation across diverse clothing styles and human poses. It is
-            also capable of identifying background points to isolate human scans from surrounding noise and produce
-            more consistent clothing segmentation. The performance of PartCloth3D is compared with the multi-view
-            4D-DRESS and point-based CloSe-Net baselines using IoU, DSC, LPIPS, and SSIM. PartCloth3D performs best
-            across all four metrics and achieves the highest IoU of 0.895, representing gains of 10.3 and 3.0
-            percentage points over 4D-DRESS and CloSe-Net.
+            Accurate 3D clothing segmentation is essential for fashion, entertainment, and animation applications. Existing methods can generally be categorized into multi-view projection-based and point-based methods. Multi-view projection-based methods are susceptible to pose occlusion and incur higher inference time due to repeated image rendering and 3D back-projection operations. Point-based methods are generally restricted to coarse garment categorization and rely heavily on accurate registration with parametric body models. Hence, a novel point cloud segmentation network named PartCloth3D is proposed to segment 3D clothing using body part priors. It predicts fifteen semantic body parts and the background from the scan geometry with graph cut optimization and subsequently recovering missing regions. The refined body parts are encoded as body priors and fuse with point and clothing features to estimate per-point clothing labels. Experiments on the CTD and THuman2.0 datasets demonstrate improved body part segmentation across diverse clothing styles and human poses. It is also capable of identifying background points to isolate human scans from surrounding noise and produce more consistent clothing segmentation. The performance of PartCloth3D is compared with the multi-view 4D-DRESS and point-based CloSe-Net baselines using IoU, DSC, LPIPS, and SSIM. On scans containing background geometry, PartCloth3D performs best across all four metrics and achieves the highest IoU of 0.895, representing gains of 10.4 and 3.0 percentage points over 4D-DRESS and CloSe-Net. 
           </p>
         </div>
       </div>
@@ -382,6 +368,80 @@
   </div>
 </section>
 <!-- End method -->
+
+<!-- 3D Clothing Segmentation Results -->
+<section class="section" id="results">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-3 has-text-centered">3D Clothing Segmentation Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present the clothing segmentation result of 4D-DRESS, CloSe-Net and PartCloth3D on the CTD dataset. Left is the clothing segmentation and Right is the decomposed clothing. 
+          </p>
+        </div>
+        <div class="result video">
+          <video autoplay muted loop playsinline controls preload="auto">
+            <source src="result/eval_result/08_exp2_f_c_26801273560.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline controls preload="auto">
+            <source src="result/eval_result/01_exp3_f_t_33372076010.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline controls preload="auto">
+            <source src="result/eval_result/09_exp4_f_c_14238682637.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline controls preload="auto">
+            <source src="result/eval_result/03_exp7_m_t_31470334043.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline controls preload="auto">
+            <source src="result/eval_result/10_exp7_m_j_32446906256.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline controls preload="auto">
+            <source src="result/eval_result/02_exp6_f_c_30629590535.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline controls preload="auto">
+            <source src="result/eval_result/04_exp8_f_d_33521651029.mp4" type="video/mp4">
+          </video>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Random poses and self-contact poses -->
+ <section class="section" id="random_contact_result">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-3 has-text-centered">Segmentation Results on Random Poses and Self-Contact Poses </h2>
+        <div class="content has-text-justified">
+          <p>          
+            We further evaluate the performance of PartCloth3D on random poses and self-contact poses. The results show that PartCloth3D can handle various poses and self-contact scenarios effectively, maintaining high segmentation accuracy across different clothing styles and body configurations.
+          </p>
+        </div>
+        <div class="result video">
+          <video autoplay muted loop playsinline controls preload="auto">
+            <source src="result/eval_result/11_exp10_0000.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline controls preload="auto">
+            <source src="result/eval_result/12_exp10_0047.mp4" type="video/mp4">
+          </video>
+
+          <video autoplay muted loop playsinline controls preload="auto">
+            <source src="result/eval_result/05_exp1_f_p_33308183516.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline controls preload="auto">
+            <source src="result/eval_result/06_exp1_f_p_32586203270.mp4" type="video/mp4">
+          </video>
+          <video autoplay muted loop playsinline controls preload="auto">
+            <source src="result/eval_result/07_exp1_f_p_28330476024.mp4" type="video/mp4">
+          </video>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End random poses and self-contact poses -->
 
 
 <!-- Noisy scans -->
